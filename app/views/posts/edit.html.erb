@@ -1,0 +1,9 @@
+<div>
+<%=form_tag("/posts/#{@post.id}/update") do %>	
+<p><input class="input" type="text" name="heading" value="<%= @post.heading%>"></p>
+<p><input class="input" type="text" name="subheading" value="<%= @post.subheading %>"></p>
+<p>		<textarea name="content_1"><%= @post.content_1 %></textarea></p>
+<p>		<textarea name="content_2"><%= @post.content_2 %></textarea></p>
+<p>		<input type="submit" value="ok"><p>
+<% end %>	
+</div>

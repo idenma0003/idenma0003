@@ -1,0 +1,73 @@
+
+  <div class="heading">
+    <div class="dictionary-name">
+     <p> <%= Dictionary.find(1).name %></p>
+    </div>
+  
+
+
+
+
+
+    <%@posts.each do |post| %>
+      <p><%= link_to(post.heading,"/posts/#{post.id}") %></p>
+    <%end%>
+	
+	<div class="icon_button">
+      <%= link_to "/posts/new" do %>
+      <p><i class="far fa-file-alt"> new</i></p>
+      <% end %>
+    </div>
+	
+	
+	
+  </div>
+<div class="main-contents">
+
+
+<div class="content">
+  <div class="show_heading">
+    <h1><i class="fa fa-comment page-number-core page-number-dark"></i><%=@post.heading %></h1>
+    <h2><%=@post.subheading %></h2>
+  </div>
+</div>
+
+
+
+
+<div class="content">
+
+
+
+
+
+  <div class="child_content_1">
+    <p><%=simple_format(@post.content_1) %></p>
+  </div>
+  <%if @post.content_2.blank? %>
+    <div class="air_content">
+
+    </div>
+	<% else %>
+	    <div class="child_content_2">
+   <p><%=simple_format(@post.content_2) %></p>
+    </div>
+  <% end %>
+
+  </div>
+
+<div class="icon_button">
+  <%= link_to("/posts/#{@post.id}/edit") do %>
+  <p><i class="far fa-edit"> edit</i>
+  <% end %>
+<%= link_to("/posts/#{@post.id}/destroy",{method:"post"})do %>
+<i class="far fa-trash-alt"> delete</i></p>
+  <% end %>
+  
+
+</div>
+
+
+
+
+</div>

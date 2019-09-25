@@ -1,0 +1,8 @@
+<h1>hello dictionaries!</h1>
+<p><%= link_to("new","/dictionariesnew") %> </p>
+ <% @dictionaries.each do |dictionary| %>
+  <div class="icon_button">
+   <p><%= dictionary.name %> </p>
+   <p><%= link_to("edit","/dictionaries/#{dictionary.id}") %><%= link_to("delete","/dictionaries/#{dictionary.id}", method: :delete) %></p>
+  </div>
+ <% end %>
